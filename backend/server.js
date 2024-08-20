@@ -20,7 +20,12 @@ connectCloudinary();
 //middleware
 app.use(express.json());
 
-app.use(cors()); 
+app.use(
+    cors({
+      origin: process.env.CLIENT_URL, // Only allow requests from this origin
+      credentials: true, // Allow credentials to be included in requests
+    })
+  );
 
 //initializing routes
 
