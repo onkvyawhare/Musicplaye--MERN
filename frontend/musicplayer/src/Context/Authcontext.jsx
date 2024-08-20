@@ -8,13 +8,14 @@ export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const signupUser = async (name, email, password) => {
+  const signupUser = async (name, email, password,confirmPassword) => {
     setLoading(true);
     try {
       const response = await axios.post(`${REACT_APP_API_URL}/signup`, {
         name,
         email,
         password,
+        confirmPassword
       });
       setUser(response.data.user);
     } catch (error) {
