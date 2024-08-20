@@ -17,7 +17,7 @@ const Button = ({
       type={type}
       onClick={onClick}
     >
-      
+      {isLoading ? <img src={btnLoading} alt="loading snipper" /> : children}
     </button>
   );
 };
