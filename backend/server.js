@@ -13,7 +13,10 @@ import authrouter from "./src/routes/Auth.js";
 const app=express();
 const port=process.env.PORT || 4000;
 
-
+const allowedOrigins = [
+    'http://localhost:5173', // Development origin
+    'https://your-production-url.com' // Production origin
+  ];
   
 
 connectDB();
@@ -22,21 +25,10 @@ connectCloudinary();
 //middleware
 app.use(express.json());
 
-const allowedOrigins = [
-    'http://localhost:5173' 
-    
-  ];
-
-pp.use(
+app.use(
     cors({
-      origin: function (origin, callback) {
-        if (!origin || allowedOrigins.includes(origin)) {
-          callback(null, true);
-        } else {
-          callback(new Error('Not allowed by CORS'));
-        }
-      },
-      credentials: true,
+      origin: process.env.CLIENT_URL, // Only allow requests from this origin
+      credentials: true, // Allow credentials to be included in requests
     })
   );
 
