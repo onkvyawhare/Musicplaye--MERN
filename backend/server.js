@@ -13,10 +13,7 @@ import authrouter from "./src/routes/Auth.js";
 const app=express();
 const port=process.env.PORT || 4000;
 
-const allowedOrigins = [
-    'http://localhost:5173' // Development origin
-     // Production origin
-  ];
+
   
 
 connectDB();
@@ -24,6 +21,11 @@ connectCloudinary();
 
 //middleware
 app.use(express.json());
+
+const allowedOrigins = [
+    'http://localhost:5173' 
+    
+  ];
 
 pp.use(
     cors({
