@@ -3,7 +3,7 @@ require("dotenv").config();
 
 
 
-exports.auth=(req,res,next) => {
+const auth=(req,res,next) => {
     try{
         //extract token
         const token=req.cookies.token 
@@ -42,3 +42,5 @@ exports.auth=(req,res,next) => {
 
     }
 }
+
+export default auth;
