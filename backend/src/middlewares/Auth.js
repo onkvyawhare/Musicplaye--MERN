@@ -1,5 +1,8 @@
-const jwt=require("jsonwebtoken");
-require("dotenv").config();
+import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+
+// Initialize environment variables
+dotenv.config();
 
 
 
