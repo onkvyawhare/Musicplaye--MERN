@@ -1,6 +1,6 @@
 import  { createContext, useState, useContext } from 'react';
 import axios from 'axios';
-const REACT_APP_API_URL = 'https://musicplayer-mern.onrender.com';
+const REACT_APP_API_URL = 'https://musicplayer-mern.onrender.com'
 
 export const AuthContext = createContext();
 
@@ -11,7 +11,7 @@ export const AuthContextProvider = ({ children }) => {
   const signupUser = async (name, email, password,confirmPassword) => {
     setLoading(true);
     try {
-      const response = await axios.post(`${REACT_APP_API_URL}/signup`, {
+      const response = await axios.post(`${REACT_APP_API_URL}/api/auth/signup`, {
         name,
         email,
         password,
@@ -28,7 +28,7 @@ export const AuthContextProvider = ({ children }) => {
   const loginUser = async (email, password) => {
     setLoading(true);
     try {
-      const response = await axios.post(`${REACT_APP_API_URL}/login`, {
+      const response = await axios.post(`${REACT_APP_API_URL}/api/auth/login`, {
         email,
         password,
       });

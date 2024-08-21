@@ -4,6 +4,8 @@ const authrouter = express.Router()
 // Import the required controllers and middleware functions
 import { signup,login } from "../controllers/Auth.js";
 
+import { auth } from "../middlewares/Auth.js";
+
 
 
 // Routes for Login, Signup, and Authentication
@@ -13,10 +15,10 @@ import { signup,login } from "../controllers/Auth.js";
 // ********************************************************************************************************
 
 // Route for user login
-authrouter.post("/login", login)
+authrouter.post("/login",auth, login)
 
 // Route for user signup
-authrouter.post("/signup", signup)
+authrouter.post("/signup",auth, signup)
 
 
 

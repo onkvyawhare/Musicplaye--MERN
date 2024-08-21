@@ -1,4 +1,5 @@
 import React from 'react';
+import { assets } from '../assets/frontend-assets/assets';
 
 
 
@@ -17,7 +18,7 @@ const Button = ({
       type={type}
       onClick={onClick}
     >
-      {isLoading ? <img src={btnLoading} alt="loading snipper" /> : children}
+      {isLoading ? <img src={assets.btnLoading} alt="loading snipper" /> : children}
     </button>
   );
 };
