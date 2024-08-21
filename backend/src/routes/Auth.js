@@ -4,7 +4,7 @@ const authrouter = express.Router()
 // Import the required controllers and middleware functions
 import { signup,login } from "../controllers/Auth.js";
 
-import { auth } from "../middlewares/Auth.js";
+import auth from "../middlewares/Auth.js";
 
 
 
